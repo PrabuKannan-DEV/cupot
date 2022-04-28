@@ -27,35 +27,35 @@
                         </div>
                     </div>
 
-                    <div class="card-body">
+                    <div class="card-body px-5">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
                             </div>
                         @endif
                         <div class="row">
-                            <div class="p-3 col-6">
-                                <strong>Age</strong>
+                            <div class="p-3 col-6 d-flex">
+                                <strong class="col-6">Age</strong>
                                 <div>{{ Carbon\Carbon::parse($user->dob)->diffInYears() }} Years</div>
                             </div>
-                            <div class="p-3 col-6">
-                                <strong>Occupation</strong>
+                            <div class="p-3 col-6 d-flex">
+                                <strong class="col-6">Occupation</strong>
                                 <div class="col-md-6">{{ $user->occupation }}</div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="p-3 col-6">
-                                <strong>Annual Income</strong>
-                                <div class="col-md-6">{{ $user->annual_income }} </div>
+                            <div class="p-3 col-6 d-flex">
+                                <strong class="col-6">Annual Income</strong>
+                                <div class="col-md-6">{{'₹ ' .$user->annual_income }} </div>
                             </div>
-                            <div class="p-3 col-6">
-                                <strong>Family Type
+                            <div class="p-3 col-6 d-flex">
+                                <strong class="col-6">Family Type</strong>
                                 <div class="col-md-6">{{ $user->family_type }}</div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="p-3 col-6">
-                                <strong>Manglik</strong>
+                            <div class="p-3 col-6 d-flex">
+                                <strong class="col-6">Manglik</strong>
                                 <div class="col-md-6">{{ $user->manglik }}</div>
                             </div>
                         </div>
