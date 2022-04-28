@@ -11,7 +11,7 @@ class SocialController extends Controller
 {
     public function googleRedirect()
     {
-        return Socialite::driver('google')->redirect();
+        return Socialite::driver('google')->stateless()->redirect();
     }
 
     public function googleCallback()
@@ -32,7 +32,7 @@ class SocialController extends Controller
                     'name' => $user->name,
                     'email' => $user->email,
                     'google_id'=> $user->id,
-                'password' => encrypt('123456dummy')
+                    'password' => encrypt('123456dummy')
                 ]);
 
                 Auth::login($newUser);
