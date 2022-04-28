@@ -8,6 +8,7 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
+                    <div class="row">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -65,10 +66,15 @@
                             </div>
                         </div>
                     </form>
-
-                    <hr>
-                    <a href="/auth/google/redirect" class="btn btn-success">Sign in with Google</a>
                 </div>
+                    <hr>
+                    <div class="row d-flex justify-content-around">
+                        <div class="col-4">
+                            <a href="/auth/google/redirect" class="btn btn-light border-dark">
+                                <img src="/img/google.png" style="height: 30px;width:30px;"></img>
+                                Sign up with google</a>
+                        </div>
+                    </div>                </div>
             </div>
         </div>
     </div>
