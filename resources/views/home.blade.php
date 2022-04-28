@@ -1,12 +1,12 @@
 @extends('layouts.app')
-
+@section('title', 'Home')
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header d-flex justify-content-between align-content-center">
-                        <div class="h1">
+                    <div class="card-header d-flex justify-content-between align-content-center bg-dark text-white">
+                        <div class="h2">
                             {{ $user->name }}
                             <i class="fa-solid fa-mars mt-n3 p-3" data-toggle="tooltip" title="{{ $user->gender }}"><img src="
                                 @if ($user->gender == 'Male') /img/male.png

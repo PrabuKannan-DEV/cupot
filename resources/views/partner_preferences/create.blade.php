@@ -1,13 +1,12 @@
 @extends('layouts.app')
-@section('title', 'New Profile')
-
+@section('title', 'Partner Preferences')
 @section('content')
     <div class="container p-3">
         <div class="card">
-            <div class="card-header bg-primary text-white">
-                <h2>
-                    What are your partner preferences {{ $user->name }}?
-                </h2>
+            <div class="card-header bg-dark text-white">
+                <h4 class="p-3">
+                    {{ $user->name }}, What are your partner preferences?
+                </h4>
             </div>
             <div class="card-body  p-5">
                 <form action="{{ route('users.partner_preferences.'.($mode=="create"?"store":"update"), ['user'=> $user, 'partner_preference'=>isset($user->partnerPreference)?$user->partnerPreference->id:null, 'mode'=>$mode]) }}" method="POST">
@@ -16,7 +15,7 @@
                     @endif
                     @csrf
                    @include('partials.filters')
-                    <button type="submit" class="btn btn-primary">Save and Continue...</button>
+                    <button type="submit" class="btn btn-dark">Save</button>
                 </form>
             </div>
         </div>

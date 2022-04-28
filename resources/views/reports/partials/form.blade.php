@@ -2,7 +2,7 @@
     <div class="form-group row">
         <div class="mb-3 col-6">
             <div class="mb-3 col-6">
-                <label for="age">Age</label>
+                <label class="form-label h5" for="age">Age</label>
                 <input required type="text" name="age_range" id="age_range" readonly style="border:0; color:#f6931f; font-weight:bold;" class=" @error('manglik') is-invalid @enderror">
               <div id="age-slider-range"></div>
                 @error('age')
@@ -11,18 +11,18 @@
             </div>
         </div>
         <div class="mb-3 col-6">
-            <label for="gender" class="form-label">Gender
+            <label for="gender" class="form-label h5">Gender
                 <div class="form-check">
                     <input class="form-check-input @error('gender') is-invalid @enderror" type="radio"
                         name="gender" value="Male" id="gender_male" @if (isset($input['gender']) and $input['gender'] =='Male') checked @endif>
-                    <label class="form-check-label" for="gender_male">
+                    <label class="form-check-label h6" for="gender_male">
                         Male
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input @error('gender') is-invalid @enderror" type="radio"
                         name="gender" value="Female" id="gender_female" >
-                    <label class="form-check-label" for="gender_female" @if (isset($input['gender']) and $input['gender'] =='Female') checked @endif>
+                    <label class="form-check-label h6" for="gender_female" @if (isset($input['gender']) and $input['gender'] =='Female') checked @endif>
                         Female
                     </label>
                 </div>

@@ -4,10 +4,8 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-body">
-                        @include('reports.partials.form')
-                    </div>
+                <div class="card-header bg-white" style="padding:50px;">
+                            @include('reports.partials.form')
                 </div>
 
                 @component('partials.results', [ 'results' => $results, 'count' => $count])
