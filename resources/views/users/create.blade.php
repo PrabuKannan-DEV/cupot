@@ -69,7 +69,7 @@
                             <label for="annual_income">Annual Income ₹</label>
                             <input type="text" name="annual_income" id="annual_income"
                                 class="form-control @error('annual_income') is-invalid @enderror">
-                                    {{-- <input type="text"  id="annual_income_ramge" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                            {{-- <input type="text"  id="annual_income_ramge" readonly style="border:0; color:#f6931f; font-weight:bold;">
                                   <div id="slider-range"></div> --}}
                             @error('annual_income')
                                 <div class="alert alert-danger">{{ $message }}</div>

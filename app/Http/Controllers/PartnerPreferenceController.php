@@ -12,7 +12,8 @@ class PartnerPreferenceController extends Controller
     {
         $mode = $request->mode;
         $input = $user->partnerPreference;
-        return view('partner_preferences.create', compact('user', 'mode', 'input'));
+        $logged_in = $request->logged_in ?? false;
+        return view('partner_preferences.create', compact('user', 'mode', 'input', 'logged_in'));
     }
 
     public function store(Request $request, User $user)

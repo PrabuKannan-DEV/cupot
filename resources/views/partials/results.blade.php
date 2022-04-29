@@ -9,10 +9,13 @@
                     <div class="h4">
                         {{ $result->name }},
                         <small>{{ Carbon\Carbon::parse($result->dob)->diffInYears() . 'Yrs' }}</small>
-                        <i class="fa-solid fa-mars mt-n3 p-3" data-toggle="tooltip" title="{{ $result->gender }}"><img src="
-                            @if ($result->gender == 'Male') /img/male.png
-                        @else
-                        /img/female.png @endif
+                        <i class="fa-solid fa-mars mt-n3 p-3" data-toggle="tooltip" title="{{ $result->gender }}"><img
+                                src="
+                            @if ($result->gender == 'Male')
+                            /img/male.png
+                            @else
+                            /img/female.png
+                            @endif
                             " alt="" style="height: 30px; width:30px;"></i>
                     </div>
                     <div class="">
@@ -37,7 +40,8 @@
                         </div>
                         <div class="col-4 position-relative">
                             <img src="{{ $result->gender == 'Male' ? '/img/male-avatar.jpeg' : '/img/female-avatar.jpeg' }}"
-                                alt="{{ $result->gender . ' Picture' }}" style="width:250px;height:250px;position:relative; padding:10px;">
+                                alt="{{ $result->gender . ' Picture' }}"
+                                style="width:250px;height:250px;position:relative; padding:10px;">
                         </div>
                     </div>
                 </div>

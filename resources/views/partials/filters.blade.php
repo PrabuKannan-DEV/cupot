@@ -3,7 +3,7 @@
         <label for="occupation" class="form-label h5">Occupation</label>
         <select @if (url()->current() != route('reports.users')) required @endif name="occupation[]" id="occupation"
             class="form-control @error('occupation') is-invalid @enderror" multiple="multiple">
-            <option value="Private Job" @if (isset($input['occupation'])and(in_array('Private Job', is_array($input['occupation']) ? $input['occupation'] : [$input['occupation']]))) selected @endif>Private Job</option>
+            <option value="Private Job" @if (isset($input['occupation']) and in_array('Private Job', is_array($input['occupation']) ? $input['occupation'] : [$input['occupation']])) selected @endif>Private Job</option>
             <option value="Government Job" @if (isset($input['occupation']) and in_array('Government Job', is_array($input['occupation']) ? $input['occupation'] : [$input['occupation']])) selected @endif>Government Job</option>
             <option value="Business" @if (isset($input['occupation']) and in_array('Business', is_array($input['occupation']) ? $input['occupation'] : [$input['occupation']])) selected @endif>Business</option>
         </select>

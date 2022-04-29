@@ -9,12 +9,15 @@
                 </h4>
             </div>
             <div class="card-body  p-5">
-                <form action="{{ route('users.partner_preferences.'.($mode=="create"?"store":"update"), ['user'=> $user, 'partner_preference'=>isset($user->partnerPreference)?$user->partnerPreference->id:null, 'mode'=>$mode]) }}" method="POST">
+                <form
+                    action="{{ route('users.partner_preferences.' . ($mode == 'create' ? 'store' : 'update'), ['user' => $user,'partner_preference' => isset($user->partnerPreference) ? $user->partnerPreference->id : null,'mode' => $mode]) }}"
+                    method="POST">
                     @if ($mode == 'edit')
                         @method('PUT')
                     @endif
                     @csrf
-                   @include('partials.filters')
+                    @include('partials.filters')
+                    <input type="hidden" name="logged_in" id="logged_in" value="{{ $logged_in ?? '' }}">
                     <button type="submit" class="btn btn-dark">Save</button>
                 </form>
             </div>
@@ -40,22 +43,21 @@
             var searchfield = $(this).parent().find('.select2-search__field');
             searchfield.prop('disabled', true);
         });
-
     </script>
     <script>
-        $( function() {
-        [from, to] = "{{$input['annual_income_range'] ?? "20000-90000"}}".split('-')
-          $( "#slider-range" ).slider({
-            range: true,
-            min: 0,
-            max: 100000,
-            values: [ from, to ],
-            slide: function( event, ui ) {
-              $( "#annual_income_range" ).val(  ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-            }
-          });
-          $( "#annual_income_range" ).val( $( "#slider-range" ).slider( "values", 0 ) +
-            " - " + $( "#slider-range" ).slider( "values", 1 ) );
-        } );
-        </script>
+        $(function() {
+            [from, to] = "{{ $input['annual_income_range'] ?? '20000-90000' }}".split('-')
+            $("#slider-range").slider({
+                range: true,
+                min: 0,
+                max: 100000,
+                values: [from, to],
+                slide: function(event, ui) {
+                    $("#annual_income_range").val(ui.values[0] + " - " + ui.values[1]);
+                }
+            });
+            $("#annual_income_range").val($("#slider-range").slider("values", 0) +
+                " - " + $("#slider-range").slider("values", 1));
+        });
+    </script>
 @stop
